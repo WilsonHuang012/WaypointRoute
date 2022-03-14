@@ -33,7 +33,7 @@ std::vector<std::string> SpiltString(std::string s, std::string delimiter, bool 
 	if (removeEmptyEntries)
 	{
 		std::vector<std::string>::iterator it = std::remove_if(result.begin(), result.end(),
-			[&](const std::string& item) { return item == ""; });
+			[&result](const std::string& item) { return item == ""; });
 		result.erase(it, result.end());
 	}
 	return result;
